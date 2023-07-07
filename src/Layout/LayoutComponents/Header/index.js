@@ -30,7 +30,7 @@ const MENU_ITEMS = [
             title: 'Language',
             data: [
                 { code: 'en', title: 'English' },
-                { code: 'vi', title: 'Tieng Viet' },
+                { code: 'vi', title: 'VietNamese' },
                 { code: 'en', title: 'China' },
                 { code: 'vi', title: 'Campodian' },
                 { code: 'en', title: 'Japan' },
@@ -39,7 +39,7 @@ const MENU_ITEMS = [
                 { code: 'vi', title: 'Indonesia' },
                 { code: 'en', title: 'Philipin' },
                 { code: 'vi', title: 'Malaysia' },
-                { code: 'en', title: 'Mianma' },
+                { code: 'en', title: 'Myanma' },
                 { code: 'vi', title: 'India' },
                 { code: 'en', title: 'Us' },
                 { code: 'vi', title: 'Arapxiut' },
