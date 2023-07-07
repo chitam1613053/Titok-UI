@@ -1,6 +1,6 @@
 @import 'normalize.css';
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 :root {
     --primary: #fe2c55;
     --black: #000;
@@ -19,8 +19,29 @@
 html {
     font-size: 62.5%;
 }
+button {
+    font-family: 'TikTokFont', sans-serif;
+}
+//font embeded
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Regular.woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Semibold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Bold.woff2');
+    font-weight: 700;
+}
+
+//
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'TikTokFont', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
@@ -36,6 +57,7 @@ a[href] {
     text-decoration: none;
 }
 body {
+    overflow-y: overlay;
     .tippy-arrow {
         color: rgba(84, 84, 84, 0.92);
     }
@@ -49,4 +71,30 @@ body {
     .tippy-content {
         padding: 8px 9px;
     }
+}
+html ::-webkit-scrollbar {
+    border-radius: 0px;
+    width: 8px;
+}
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.06);
+}
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.06);
+}
+
+html ::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0);
+}
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
 }

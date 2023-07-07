@@ -1,32 +1,26 @@
-import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import {
-    faCircleXmark,
-    faSpinner,
-    faMagnifyingGlass,
     faEllipsisVertical,
     faEarthAsia,
     faCircleQuestion,
     faKeyboard,
     faCloudUpload,
-    faMessage,
     faUser,
     faCoins,
     faGear,
     faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
-import Headless from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/menu';
-
+import { InboxIcon, MessagesIcon } from '~/components/Icons';
+import Search from '../Search';
+import { routerConfig } from '~/Config/routerConfig';
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
@@ -35,6 +29,22 @@ const MENU_ITEMS = [
         children: {
             title: 'Language',
             data: [
+                { code: 'en', title: 'English' },
+                { code: 'vi', title: 'Tieng Viet' },
+                { code: 'en', title: 'China' },
+                { code: 'vi', title: 'Campodian' },
+                { code: 'en', title: 'Japan' },
+                { code: 'vi', title: 'Italy' },
+                { code: 'en', title: 'English' },
+                { code: 'vi', title: 'Indonesia' },
+                { code: 'en', title: 'Philipin' },
+                { code: 'vi', title: 'Malaysia' },
+                { code: 'en', title: 'Mianma' },
+                { code: 'vi', title: 'India' },
+                { code: 'en', title: 'Us' },
+                { code: 'vi', title: 'Arapxiut' },
+                { code: 'en', title: 'Jermany' },
+                { code: 'vi', title: 'Canada' },
                 { code: 'en', title: 'English' },
                 { code: 'vi', title: 'Tieng Viet' },
             ],
@@ -74,13 +84,8 @@ const userMenu = [
     },
 ];
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
     const currentUser = true;
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([]);
-        }, 3000);
-    }, []);
+
     const handleMenuChange = (menuItem) => {
         console.log(menuItem);
     };
@@ -88,35 +93,11 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={images.logo} alt="tiktok" />
+                    <Link to={routerConfig.home}>
+                        <img src={images.logo} alt="tiktok" />
+                    </Link>
                 </div>
-                <Headless
-                    interactive={true}
-                    visible={searchResult.length > 0}
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex={-1}>
-                            <PopperWrapper>
-                                <h4 className={cx('search-tile')}>Accounts</h4>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input placeholder="Search accounts and videos" spellCheck={false} />
-                        <button className={cx('clear')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-
-                        <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-                </Headless>
+                <Search></Search>
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
@@ -124,6 +105,16 @@ function Header() {
                                 <Tippy content="upload videos">
                                     <button className={cx('action-btn')}>
                                         <FontAwesomeIcon icon={faCloudUpload} />
+                                    </button>
+                                </Tippy>
+                                <Tippy content="Messages">
+                                    <button className={cx('action-btn')}>
+                                        <MessagesIcon className={cx('messages-icon')} />
+                                    </button>
+                                </Tippy>
+                                <Tippy content="Inbox">
+                                    <button className={cx('action-btn')}>
+                                        <InboxIcon className={cx('inbox-icon')} />
                                     </button>
                                 </Tippy>
                             </div>

@@ -7,7 +7,7 @@ import Header from './Header';
 import { useState } from 'react';
 const cx = classNames.bind(styles);
 const onChangeDf = () => {};
-function Menu({ children, items = [], onChange = onChangeDf }) {
+function Menu({ children, items = [], onChange = onChangeDf }, hideOnClick = false) {
     const [history, setHistory] = useState([{ data: items }]);
     let current = history[history.length - 1];
     const RenderItem = () => {
@@ -30,6 +30,8 @@ function Menu({ children, items = [], onChange = onChangeDf }) {
     };
     return (
         <Tippy
+            hideOnClick={hideOnClick}
+            interactive={true}
             offset={[16, 8]}
             delay={[0, 400]}
             placement="bottom-end"
@@ -44,7 +46,9 @@ function Menu({ children, items = [], onChange = onChangeDf }) {
                                 }}
                             />
                         )}
-                        <RenderItem />
+                        <div className={cx('MenuScrollBar')}>
+                            <RenderItem />
+                        </div>
                     </PopperWrapper>
                 </div>
             )}

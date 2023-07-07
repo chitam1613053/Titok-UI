@@ -1,0 +1,85 @@
+.container {
+    padding: 32px 24px;
+}
+.heading {
+    width: 624px;
+}
+.header {
+    display: flex;
+}
+
+.avatarImage {
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.userTitle {
+    margin-left: 20px;
+}
+
+.userNickname {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    word-break: break-word;
+}
+
+.userName {
+    margin-bottom: 15px;
+    display: flex;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.028px;
+    text-overflow: ellipsis;
+    height: 25px;
+    overflow: hidden;
+    max-width: 450px;
+    white-space: nowrap;
+    align-items: flex-end;
+}
+
+.followBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    min-width: 208px;
+    line-height: 22px;
+}
+
+.userSocial {
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 22px;
+    color: rgba(18, 18, 18, 0.75);
+}
+
+.socialItem {
+    margin-right: 20px;
+}
+
+.userCount {
+    margin-right: 6px;
+    font-weight: 700;
+    color: rgba(22, 24, 35, 1);
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.028px;
+}
+.userMoreInfo {
+    margin-top: 10px;
+}
+.userInfoItem {
+    display: flex;
+    align-items: center;
+}

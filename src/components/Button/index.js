@@ -1,9 +1,9 @@
-import styles from './Button.module.scss';
+import styles from './NewBtn.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
-function Button({
+function NewBtn({
     to,
     href,
     primary,
@@ -20,7 +20,7 @@ function Button({
     className,
     ...passProps
 }) {
-    let Comp = 'Button';
+    let Comp = 'button';
 
     const classes = cx('wrapper', { [className]: className, primary, outline, small, large, text, disable, rounded });
     const props = {
@@ -52,4 +52,4 @@ function Button({
     );
 }
 
-export default Button;
+export default NewBtn;
