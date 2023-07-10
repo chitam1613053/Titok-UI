@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Titok-UI/static/css/main.4f899ac8.css",
+    "main.js": "/Titok-UI/static/js/main.e90f6637.js",
+    "static/js/787.fe00223f.chunk.js": "/Titok-UI/static/js/787.fe00223f.chunk.js",
+    "static/media/TikTokFont-Bold.woff2": "/Titok-UI/static/media/TikTokFont-Bold.145f211a356fce76072d.woff2",
+    "static/media/TikTokFont-Semibold.woff2": "/Titok-UI/static/media/TikTokFont-Semibold.0a3262809350126554ad.woff2",
+    "static/media/TikTokFont-Regular.woff2": "/Titok-UI/static/media/TikTokFont-Regular.0ca75da985ad7821cbde.woff2",
+    "static/media/logo.svg": "/Titok-UI/static/media/logo.14788dbb20dc655d0dbaac43503d6b98.svg",
+    "index.html": "/Titok-UI/index.html",
+    "main.4f899ac8.css.map": "/Titok-UI/static/css/main.4f899ac8.css.map",
+    "main.e90f6637.js.map": "/Titok-UI/static/js/main.e90f6637.js.map",
+    "787.fe00223f.chunk.js.map": "/Titok-UI/static/js/787.fe00223f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4f899ac8.css",
+    "static/js/main.e90f6637.js"
+  ]
+}
