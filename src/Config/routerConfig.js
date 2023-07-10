@@ -3,4 +3,5 @@ export const routerConfig = {
     Following: '/Following',
     Profile: '/:nickname',
     Upload: '/Upload',
+    Live: '/Live',
 };

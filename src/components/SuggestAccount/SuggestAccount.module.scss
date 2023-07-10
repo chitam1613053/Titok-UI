@@ -1,0 +1,134 @@
+.wrapper {
+    position: relative;
+    padding: 16px 16px 8px;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        top: 0;
+        height: 1px;
+        background: rgba(22, 24, 35, 0.12);
+        -webkit-transform: scaleY(0.5);
+        -moz-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        bottom: 0;
+        height: 1px;
+        background: rgba(22, 24, 35, 0.12);
+        -webkit-transform: scaleY(0.5);
+        -moz-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+}
+
+.label {
+    // padding: 0px 8px;
+    margin-bottom: 8px;
+}
+.account-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    cursor: pointer;
+}
+.item-img {
+    margin-right: 12px;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.nickname {
+    margin-top: -2px;
+    color: rgb(22, 24, 35);
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 21px;
+    letter-spacing: 0.03px;
+    margin-top: -2px;
+    max-width: 145px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.name {
+    color: rgba(22, 24, 35, 0.75);
+    font-weight: 400;
+    font-size: 1.2rem;
+    letter-spacing: 0.161px;
+    line-height: 15px;
+    max-width: 145px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.tick-icon {
+    color: #20d5ec;
+}
+.see-more {
+    padding: 8px 0;
+    color: rgb(254, 44, 85);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 18px;
+    letter-spacing: 0.093px;
+    cursor: pointer;
+}
+//////review item
+.review-wrapper {
+    padding: 16px;
+    width: 328px;
+}
+.review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.review-avatar {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.review-btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.review-nickname {
+    color: rgb(22, 24, 35);
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 21px;
+    letter-spacing: 0.03px;
+    margin-top: -2px;
+    max-width: 145px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.review-name {
+    color: rgb(22, 24, 35);
+    font-weight: 400;
+    font-size: 1.6rem;
+    letter-spacing: 0.161px;
+    line-height: 1.7;
+    max-width: 145px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.review-info {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}

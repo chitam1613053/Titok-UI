@@ -1,5 +1,5 @@
 import Header from '~/Layout/LayoutComponents/Header';
-import Sidebar from './Sidebar';
+import Sidebar from '~/components/Sidebar';
 import styles from './DefaultLayout.module.scss';
 import classNames from 'classnames/bind';
 import { useState, createContext } from 'react';
