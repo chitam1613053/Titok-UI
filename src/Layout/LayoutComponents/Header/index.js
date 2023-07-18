@@ -132,7 +132,7 @@ function Header() {
                         {currentUser ? (
                             <img
                                 className={cx('user-avatar')}
-                                src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-1/348555833_262309772936980_6885896410385128857_n.jpg?stp=cp0_dst-jpg_p60x60&_nc_cat=111&ccb=1-7&_nc_sid=f67be1&_nc_ohc=NGZTs8ULcaUAX8HG1Mz&_nc_ht=scontent.fsgn5-11.fna&oh=00_AfCJw1aZ2HFMITGjEP90ckr8ulIcR-wqpmya44vE3nWpKg&oe=64A75FA3"
+                                src="https://files.fullstack.edu.vn/f8-tiktok/users/4737/6462410bca9e5.jpg"
                                 alt="User"
                             />
                         ) : (

@@ -9,11 +9,16 @@ export const UserContext = createContext();
 export const userState = createContext();
 function DefaultLayout({ children }) {
     const [userData, setUserData] = useState(JSON.parse(localStorage.getItem('user')));
+
+    const [followingAccountData, setFollowingAccountData] = useState(JSON.parse(localStorage.getItem('follow')) || []);
     const getUserData = (userAccount) => {
         setUserData(userAccount);
     };
+    const addFollowingAccountData = (followAccounts) => {
+        setFollowingAccountData(followAccounts);
+    };
     return (
-        <UserContext.Provider value={getUserData}>
+        <UserContext.Provider value={{ getUserData, followingAccountData, addFollowingAccountData }}>
             <div className={cx('wrapper')}>
                 <Header />
                 <div className={cx('container')}>

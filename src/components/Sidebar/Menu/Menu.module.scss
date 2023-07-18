@@ -6,6 +6,9 @@
     padding: 8px;
     border-radius: 4px;
     transition: background-color ease-in-out 200ms;
+    .icon {
+        display: flex;
+    }
     &.active {
         color: var(--primary);
         .icon-active {

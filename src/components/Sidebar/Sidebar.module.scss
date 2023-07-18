@@ -1,5 +1,59 @@
 .wrapper {
-    padding: 20px 20px 8px;
-    width: 356px;
-    min-height: 1000px;
+    padding: 20px 0px 26px 8px;
+    width: 240px;
+    max-height: calc(100vh - var(--default-layout-header-height));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+.follow-wrap {
+    color: rgba(22, 24, 35, 0.5);
+    font-family: TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.093px;
+    padding: 16px 8px;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        bottom: 0;
+        height: 1px;
+        background: rgba(22, 24, 35, 0.12);
+        -webkit-transform: scaleY(0.5);
+        -moz-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+}
+.follow-title {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.093px;
+    color: rgba(22, 24, 35, 0.75);
+    font-weight: 600;
+}
+.policy-wrapper {
+    color: rgba(22, 24, 35, 0.5);
+    font-weight: 600;
+    font-size: 12px;
+    padding-top: 16px;
+    padding-left: 8px;
+    cursor: pointer;
+}
+.item-wrap {
+    margin-top: 8px;
+}
+.policy-item {
+    line-height: 16px;
+    letter-spacing: 0.161px;
+    display: inline-block;
+    margin-right: 6px;
+    margin-top: 5px;
+    &:hover {
+        text-decoration: underline;
+    }
 }

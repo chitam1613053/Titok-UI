@@ -8,7 +8,7 @@
     --text-color: #333;
     /// default layout
     --default-layout-header-height: 60px;
-    --default-layout-width-content: 1150px;
+    --default-layout-width-content: 100%;
     --default-layout-horizontal-spacer: 24px;
 }
 * {
@@ -57,7 +57,6 @@ a {
     text-decoration: none;
 }
 body {
-    overflow-y: overlay;
     .tippy-arrow {
         color: rgba(84, 84, 84, 0.92);
     }

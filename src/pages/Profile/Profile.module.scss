@@ -83,3 +83,83 @@
     display: flex;
     align-items: center;
 }
+/////user nav///
+.user-nav {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    border-bottom: solid 1px #eeeef0;
+    position: relative;
+}
+.user-nav-item {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.028px;
+
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 44px;
+    justify-content: center;
+
+    width: 122px;
+    cursor: pointer;
+    text-align: center;
+    color: #73747b;
+}
+
+.user-nav--active {
+    color: rgba(22, 24, 35, 1);
+}
+.user-nav-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 2px;
+    width: 122px;
+    background-color: rgba(22, 24, 35, 1);
+    transition: 0.4s;
+    transform: translateX(0);
+}
+.liked.user-nav--active ~ .user-nav-line {
+    transform: translateX(100%);
+}
+.liked:hover ~ .user-nav-line {
+    transform: translateX(100%);
+}
+.videos:hover ~ .user-nav-line {
+    transform: translateX(0);
+}
+///user liked///
+.liked-content {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #73747b;
+}
+.liked-title {
+    font-size: 2.4rem;
+    line-height: 30px;
+    font-weight: 700;
+    color: rgb(22, 24, 35);
+    margin-top: 15px;
+}
+.liked-desc {
+    font-size: 1.6rem;
+    line-height: 21px;
+    letter-spacing: 0.03px;
+    font-weight: 400;
+    color: rgba(22, 24, 35, 0.75);
+    margin-top: 8px;
+}
+///videos//
+.videos-wrapper {
+    cursor: pointer;
+    display: grid;
+    grid-gap: 24px 16px;
+    grid-template-columns: repeat(auto-fill, minmax(184px, 1fr));
+}

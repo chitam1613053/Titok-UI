@@ -33,7 +33,7 @@ function Search() {
         fetchApi();
     }, [debounceValue]);
 
-    const getUserData = useContext(UserContext);
+    const getUserData = useContext(UserContext).getUserData;
     const handleChangeSearchValue = (e) => {
         const searchValue = e.target.value;
         if (!searchValue.startsWith(' ')) {
