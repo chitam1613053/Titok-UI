@@ -10,10 +10,20 @@ export const userState = createContext();
 export const videoContext = createContext();
 
 function DefaultLayout({ children }) {
+    const [volume, setVolume] = useState(0.4);
     const [isPlay, setIsPlay] = useState({ play: 'pause', current: null });
     const [userData, setUserData] = useState(JSON.parse(localStorage.getItem('user')));
 
     const [followingAccountData, setFollowingAccountData] = useState(JSON.parse(localStorage.getItem('follow')) || []);
+    const handleAdjustVolume = (e) => {
+        const volume = e.target.value;
+
+        if (volume === '0') {
+            setVolume(0);
+        } else {
+            setVolume(volume);
+        }
+    };
     const getUserData = (userAccount) => {
         setUserData(userAccount);
     };
@@ -51,7 +61,7 @@ function DefaultLayout({ children }) {
                 <div className={cx('container')}>
                     <Sidebar />
                     <userState.Provider value={userData}>
-                        <videoContext.Provider value={{ isPlay, setIsPlay }}>
+                        <videoContext.Provider value={{ isPlay, setIsPlay, volume, handleAdjustVolume }}>
                             <div className={cx('content')} onScroll={handleScroll}>
                                 {children}
                             </div>

@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useRef, useContext, useState } from 'react';
+import { useRef, useContext, useState, useEffect } from 'react';
 import { UserContext, videoContext } from '~/Layout/DefaultLayout';
 import { Link } from 'react-router-dom';
 import style from './MainVideo.module.scss';
@@ -27,8 +27,9 @@ function MainVideo({ index, video, account }) {
         }
     });
     //
-    const isPlay = useContext(videoContext).isPlay;
-    const setIsPlay = useContext(videoContext).setIsPlay;
+    const videoContexts = useContext(videoContext);
+    const isPlay = videoContexts.isPlay;
+    const setIsPlay = videoContexts.setIsPlay;
     const [sound, setSound] = useState(false);
     const videoRef = useRef();
     const handlePlayVideo = () => {
@@ -61,6 +62,17 @@ function MainVideo({ index, video, account }) {
         }
     };
     console.log(video, account);
+    const handleVolumeChange = (e) => {
+        videoRef.current.volume = e.target.value;
+    };
+    useEffect(() => {
+        if (!sound) {
+            videoRef.current.volume = 0;
+        } else {
+            videoRef.current.volume = videoContexts.volume;
+        }
+    });
+
     return (
         <div className={cx('wrapper')}>
             <Link className={cx('account-item')} onClick={handleClickAccount} to={`/@${account.nickname}`}>
@@ -93,7 +105,7 @@ function MainVideo({ index, video, account }) {
                     </NewBtn>
                 </header>
                 <div className={cx('video-wrap')}>
-                    <video ref={videoRef} data-index={index} className={cx('video', 'playVideo')} muted>
+                    <video ref={videoRef} data-index={index} className={cx('video', 'playVideo')} muted={!sound} loop>
                         <source src={video.src} type="video/mp4"></source>
                     </video>
                     <div
@@ -128,6 +140,20 @@ function MainVideo({ index, video, account }) {
                             <ShareIcon />
                         </div>
                         <p className={cx('video-action-desc')}>{account.followings_count}</p>
+                    </div>
+                    <div className={cx('change-volume')}>
+                        <input
+                            className={cx('range')}
+                            type="range"
+                            min="0"
+                            max="1"
+                            step="0.1"
+                            value={videoContexts.volume}
+                            onChange={(e) => {
+                                videoContexts.handleAdjustVolume(e);
+                                handleVolumeChange(e);
+                            }}
+                        />
                     </div>
                 </div>
             </div>
