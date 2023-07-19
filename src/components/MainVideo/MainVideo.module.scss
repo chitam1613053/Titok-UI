@@ -1,0 +1,156 @@
+.wrapper {
+    display: flex;
+    padding: 20px 0;
+    position: relative;
+    width: 692px;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: rgba(22, 24, 35, 0.2);
+    }
+}
+.content {
+    padding-left: 12px;
+}
+
+.avatar {
+    top: 0;
+    left: -20px;
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+/// header
+
+.video-follow {
+    position: absolute;
+    top: 22px;
+    right: 0px;
+}
+.title {
+    display: flex;
+
+    gap: 4px;
+}
+.nickname {
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 24px;
+    letter-spacing: -0.028px;
+    display: inline-block;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.fullName {
+    font-weight: 400;
+    font-size: 1.4rem;
+    letter-spacing: 0.093px;
+    display: inline-block;
+    line-height: 24px;
+}
+.desc {
+    display: flex;
+    width: 410px;
+    flex-wrap: wrap;
+}
+.video-title,
+.hashtag {
+    display: inline-block;
+}
+.hashtag {
+    font-weight: 600;
+    color: rgba(43, 93, 185, 1);
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.music-name {
+    color: rgba(22, 24, 35, 1);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.03px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+/////video
+.video {
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: rgba(22, 24, 35, 0.06);
+    object-fit: cover;
+    height: 500px;
+    width: 310px;
+}
+.video-wrap {
+    position: relative;
+}
+.icon {
+    position: absolute;
+    padding: 10px;
+    cursor: pointer;
+}
+.pause-icon,
+.play-icon {
+    left: 10px;
+    bottom: 25px;
+}
+.video-wrap:hover ~ .pause-icon {
+    display: block;
+}
+.sound-icon,
+.sound-active-icon {
+    right: 110px;
+    bottom: 25px;
+}
+.removeIcon {
+    display: none !important;
+}
+//video action
+.video-action {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.video-action-wrap {
+    width: 48px;
+    height: 48px;
+    margin: 8px 0;
+    padding: 6px;
+    border-radius: 50%;
+    color: #000;
+    background-color: rgb(22, 24, 35, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+        color: #f00;
+    }
+}
+.video-action-desc {
+    display: inline-block;
+    color: rgba(22, 24, 35, 0.75);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.161px;
+    text-align: center;
+}

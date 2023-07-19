@@ -45,7 +45,6 @@ function Profile() {
         return videosIndex.includes(index);
     });
 
-    console.log(a);
     return (
         <div className={cx('container')}>
             <div className={cx('heading')}>
