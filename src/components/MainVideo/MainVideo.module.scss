@@ -3,6 +3,7 @@
     padding: 20px 0;
     position: relative;
     width: 692px;
+    max-width: 692px;
     position: relative;
     &::after {
         content: '';
@@ -31,7 +32,7 @@
 
 .video-follow {
     position: absolute;
-    top: 22px;
+    top: 15px;
     right: 0px;
 }
 .title {
@@ -194,4 +195,23 @@
 }
 .sound-active-icon:hover ~ .change-volume {
     display: block !important;
+}
+@media screen and (max-width: 1071px) {
+    .wrapper {
+        width: 592px;
+        max-width: 592px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .wrapper {
+        width: calc((100vw - 32px) - 68px);
+    }
+    .video {
+        width: 217px;
+        height: 398px;
+    }
+    .video-action {
+        left: 233px;
+        right: unset;
+    }
 }

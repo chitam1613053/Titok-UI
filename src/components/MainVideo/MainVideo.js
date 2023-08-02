@@ -61,7 +61,6 @@ function MainVideo({ index, video, account }) {
             addFollowingAccountData(newFollows);
         }
     };
-    console.log(video, account);
     const handleVolumeChange = (e) => {
         videoRef.current.volume = e.target.value;
     };
@@ -93,10 +92,10 @@ function MainVideo({ index, video, account }) {
                         </div>
                         <div className={cx('desc')}>
                             <p className={cx('video-title')}>{video.title}</p>
-                            <p className={cx('hashtag')}>#{account.nickname}</p>
-                            <p className={cx('hashtag')}>#meme</p>
-                            <p className={cx('hashtag')}>#XuHuong2023</p>
-                            <p className={cx('hashtag')}>#CloneTikTok</p>
+                            <p className={cx('hashtag')}> #{account.nickname} </p>
+                            <p className={cx('hashtag')}> #meme </p>
+                            <p className={cx('hashtag')}> #XuHuong2023 </p>
+                            <p className={cx('hashtag')}> #CloneTikTok </p>
                         </div>
                         <div className={cx('music-name')}>original sound - {account.full_name}</div>
                     </div>

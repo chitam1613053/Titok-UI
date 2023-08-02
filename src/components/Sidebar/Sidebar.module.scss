@@ -5,6 +5,17 @@
     overflow-y: auto;
     overscroll-behavior: contain;
 }
+@media (max-width: 1071px) {
+    .wrapper {
+        padding: 0px 8px;
+        width: 72px;
+    }
+    .policy-wrapper,
+    .follow-title,
+    .follow-desc {
+        display: none;
+    }
+}
 .follow-wrap {
     color: rgba(22, 24, 35, 0.5);
     font-family: TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;

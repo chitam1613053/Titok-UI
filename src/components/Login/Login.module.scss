@@ -1,0 +1,87 @@
+.passwordIcon {
+    position: absolute;
+    top: 3px;
+    right: 0;
+}
+.login-container {
+    margin: 30px auto;
+
+    display: flex;
+    flex-direction: column;
+
+    .Login_desc {
+        // margin-top: 20px;
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+    .login_input {
+        outline: none;
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f3f3f3;
+        cursor: text;
+        &:hover {
+            background-color: #efefef;
+        }
+        width: 100%;
+    }
+
+    .login_valid {
+        font-size: 14px;
+        color: red;
+
+        opacity: 0;
+    }
+    .invalid {
+        opacity: 1;
+    }
+    .password_contain {
+        margin-top: 10px;
+        width: 100%;
+        position: relative;
+        .password_action {
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+            position: absolute;
+            cursor: pointer;
+        }
+    }
+    .login_btn {
+        margin-top: 10px;
+        background-color: #f3f3f3;
+        border: none;
+        font-size: 18px;
+        font-weight: 600;
+        color: #555;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        pointer-events: none;
+        position: relative;
+    }
+    .active_btn {
+        background-color: rgb(254, 44, 85);
+        color: #fff;
+        pointer-events: auto;
+    }
+    .login_back {
+        display: block;
+        margin: 10px auto;
+        cursor: pointer;
+        font-weight: 600;
+    }
+    .fa-spinner {
+        position: absolute;
+        left: 60%;
+        top: 30%;
+    }
+}
+.login_title {
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+}
+.modal-header {
+    height: 50px;
+}

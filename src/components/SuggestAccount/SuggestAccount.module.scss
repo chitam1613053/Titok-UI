@@ -1,3 +1,13 @@
+@media (max-width: 1071px) {
+    .label,
+    .item-info,
+    .review {
+        display: none;
+    }
+    .account-item:hover {
+        background-color: #fff !important;
+    }
+}
 .wrapper {
     position: relative;
     padding: 16px 0px 8px 16px;

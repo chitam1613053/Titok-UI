@@ -21,8 +21,10 @@ import Menu from '~/components/Popper/menu';
 import { InboxIcon, MessagesIcon } from '~/components/Icons';
 import Search from '../Search';
 import { routerConfig } from '~/Config/routerConfig';
+import { useState } from 'react';
+import ModalLogin from '~/components/Login';
 const cx = classNames.bind(styles);
-const MENU_ITEMS = [
+const logoutmenu = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'English',
@@ -76,7 +78,42 @@ const userMenu = [
         title: 'Setting',
         to: '/Setting',
     },
-    ...MENU_ITEMS,
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                { code: 'en', title: 'English' },
+                { code: 'vi', title: 'VietNamese' },
+                { code: 'en', title: 'China' },
+                { code: 'vi', title: 'Campodian' },
+                { code: 'en', title: 'Japan' },
+                { code: 'vi', title: 'Italy' },
+                { code: 'en', title: 'English' },
+                { code: 'vi', title: 'Indonesia' },
+                { code: 'en', title: 'Philipin' },
+                { code: 'vi', title: 'Malaysia' },
+                { code: 'en', title: 'Myanma' },
+                { code: 'vi', title: 'India' },
+                { code: 'en', title: 'Us' },
+                { code: 'vi', title: 'Arapxiut' },
+                { code: 'en', title: 'Jermany' },
+                { code: 'vi', title: 'Canada' },
+                { code: 'en', title: 'English' },
+                { code: 'vi', title: 'Tieng Viet' },
+            ],
+        },
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        to: '/feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'keyboard shortcut',
+    },
     {
         icon: <FontAwesomeIcon icon={faSignOut} />,
         title: 'Log out',
@@ -84,10 +121,18 @@ const userMenu = [
     },
 ];
 function Header() {
-    const currentUser = true;
+    // const currentUser = true;
 
     const handleMenuChange = (menuItem) => {
-        console.log(menuItem);
+        if (menuItem.title === 'Log out') {
+            console.log(menuItem);
+            setCurrentUser(false);
+        }
+    };
+    const [currentUser, setCurrentUser] = useState(false);
+    const [showModalLogin, setShowModalLogin] = useState(false);
+    const handleLogin = () => {
+        setShowModalLogin(true);
     };
     return (
         <header className={cx('wrapper')}>
@@ -121,14 +166,15 @@ function Header() {
                         </>
                     ) : (
                         <>
-                            <Button text>Up load</Button>
-                            <Button primary className={cx('tam')}>
+                            <Button text onClick={handleLogin}>
+                                Up load
+                            </Button>
+                            <Button primary className={cx('tam')} onClick={handleLogin}>
                                 log in
                             </Button>
                         </>
                     )}
-
-                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                    {/* <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
                             <img
                                 className={cx('user-avatar')}
@@ -136,15 +182,31 @@ function Header() {
                                 alt="User"
                             />
                         ) : (
-                            <>
-                                <button className={cx('more-btn')}>
-                                    <FontAwesomeIcon icon={faEllipsisVertical} />
-                                </button>
-                            </>
+                            <button className={cx('more-btn')}>
+                                <FontAwesomeIcon icon={faEllipsisVertical} />
+                            </button>
                         )}
-                    </Menu>
+                    </Menu> */}
+                    {console.log(currentUser)}
+                    {currentUser && (
+                        <Menu items={userMenu} onChange={handleMenuChange}>
+                            <img
+                                className={cx('user-avatar')}
+                                src="https://files.fullstack.edu.vn/f8-tiktok/users/4737/6462410bca9e5.jpg"
+                                alt="User"
+                            />
+                        </Menu>
+                    )}{' '}
+                    {!currentUser && (
+                        <Menu items={logoutmenu} onChange={handleMenuChange}>
+                            <button className={cx('more-btn')}>
+                                <FontAwesomeIcon icon={faEllipsisVertical} />
+                            </button>
+                        </Menu>
+                    )}
                 </div>
             </div>
+            <ModalLogin show={showModalLogin} setShowModal={setShowModalLogin} setCurrentUser={setCurrentUser} />
         </header>
     );
 }

@@ -1,3 +1,10 @@
+@media (max-width: 1071px) {
+    .menu-item {
+        .menu-title {
+            display: none;
+        }
+    }
+}
 .menu-item {
     display: flex;
     font-size: 1.8;

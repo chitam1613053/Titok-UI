@@ -1,6 +1,10 @@
 .wrapper {
+    // position: relative;
+    // width: 208px;
     position: relative;
-    width: 208px;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
 }
 .video {
     width: 208px;

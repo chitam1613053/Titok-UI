@@ -5,11 +5,15 @@ import styles from './menu.module.scss';
 import MenuItem from './MenuItem';
 import Header from './Header';
 import { useState } from 'react';
+
 const cx = classNames.bind(styles);
 const onChangeDf = () => {};
-function Menu({ children, items = [], onChange = onChangeDf }, hideOnClick = false) {
+
+function Menu({ children, items, onChange = onChangeDf }, hideOnClick = false) {
     const [history, setHistory] = useState([{ data: items }]);
+
     let current = history[history.length - 1];
+    console.log(current);
     const RenderItem = () => {
         return current.data.map((item, index) => {
             const isParent = !!item.children;
